@@ -42,3 +42,56 @@ btnSearch.addEventListener("click", () => {
   let completeLinkSearch = searchUrl + searchValue;
   console.log(completeLinkSearch);
 });
+
+let dane = {
+  userId: 10,
+  id: 101,
+  title: "Moje dane",
+  body: "Jakieś moje dane",
+};
+
+const urlPOST = "https://jsonplaceholder.typicode.com/posts";
+fetch(urlPOST, {
+  method: "post",
+  body: JSON.stringify(dane),
+})
+  .then((respone) => respone.json())
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
+
+const myPromise = new Promise((resolve, reject) => {
+  let x = 0;
+  if (x == 0) {
+    resolve("Dane są poprawne");
+  } else {
+    reject("Bład danych");
+  }
+});
+
+const myPromise2 = new Promise((resolve, reject) => {
+  let x = 0;
+  if (x == 0) {
+    resolve("Dane są poprawne");
+  } else {
+    reject("Bład danych");
+  }
+});
+
+myPromise
+  .then((result) => {
+    console.log(result);
+  })
+  .then((result1) => {
+    console.log(result1);
+  })
+  .catch((err) => console.log(err));
+
+Promise.all([myPromise, myPromise2])
+  .then((result) => console.log(result))
+  .catch((err) => console.log(err));
+
+const getData = async () => {
+  const response = await fetch("https://api.chucknorris.io/jokes/random");
+  const data = await response.json();
+  AddJoke(data.value);
+};
