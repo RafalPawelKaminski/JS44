@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My to do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="wrapper">
+      <h1>Moja lista zadań</h1>
+      <section class="toDoApp">
+        <div class="addTask">
+          <input id="taskNameInput" type="text" placeholder="Nazwa zadania" />
+          <button id="btnAddTask">Dodaje zadanie</button>
+        </div>
+        <div class="taskList">
+            <ul id="list">
+                <li class="list-item">
+                    <span>Nazwa Zadania</span>
+                    <input type="checkbox">
+                    <div class="option"><button class="edit-btn">Edytuj</button><button class="delete-btn">Usuń</button><button class="hidden save-btn">Zapisz</button><button class="hidden cancel-btn">Anuluj</button></div>
+                </li>
+            </ul>
+        </div>
+      </div>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
